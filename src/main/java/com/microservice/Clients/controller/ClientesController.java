@@ -1,4 +1,4 @@
-package com.microservice.client.controller;
+package com.microservice.Clients.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,30 +6,28 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.microservice.client.model.Clients;
-import com.microsevice.client.service.ClientServiceInterface;
+import com.microservice.Clients.model.Client;
+import com.microservice.Clients.service.ClientsServInterface;
+import com.microservice.Clients.service.ClientsServiceImp;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+
 @RestController
 @RequestMapping("/client")
-public class ClientController {
-	//ClientService clienteservicio = new ClientService();
+public class ClientesController {
 	
 	@Autowired
-	ClientServiceInterface clienteservicios;
+	ClientsServiceImp clienteservicios;
 	
 	@GetMapping("/all")
-	public Flux<Clients> getAll(){
+	public Flux<Client> getAll(){
 		return clienteservicios.getAll();
 	}
 	
-	@GetMapping("/client/{id}")
-	public Mono<Clients> getById(@PathVariable String id){
+	@GetMapping("/{id}")
+	public Mono<Client> getById(@PathVariable String id){
 		return clienteservicios.getById(id);
-		
 	}
-	
-
 }
