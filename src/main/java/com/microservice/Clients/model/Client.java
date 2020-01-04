@@ -4,12 +4,12 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import lombok.Getter;
-import lombok.Setter;
+//import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
-@Getter
-@Setter
+
+
 @Document(collection = "clients")
+//@JsonPropertyOrder({"id","name","lastname","dni","numcuentaahorro","cuentacredito"})
 public class Client {
 	@Id
 	private String id;
@@ -18,7 +18,19 @@ public class Client {
 	private String name;
 
 	@Field("lastname")
-	private String lastName;
+	private String lastname;
+	
+	@Field("dni")
+	private String dni;
+	
+	@Field("type")
+	private String type;
+	
+	@Field("numcuentaahorro")
+	private String numcuentaahorro;
+	
+	@Field("cuentacredito")
+	private String cuentacredito;
 
 	public String getId() {
 		return id;
@@ -37,12 +49,48 @@ public class Client {
 	}
 
 	public String getLastName() {
-		return lastName;
+		return lastname;
 	}
 
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		this.lastname = lastName;
 	}
+
+	public String getDni() {
+		return dni;
+	}
+
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+
+	public String getNumcuentaahorro() {
+		return numcuentaahorro;
+	}
+
+	public void setNumcuentaahorro(String numcuentaahorro) {
+		this.numcuentaahorro = numcuentaahorro;
+	}
+
+	public String getCuentacredito() {
+		return cuentacredito;
+	}
+
+	public void setCuentacredito(String cuentacredito) {
+		this.cuentacredito = cuentacredito;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String typeclient) {
+		this.type = typeclient;
+	}
+	
+	
+	
+
 	
 	
 }
