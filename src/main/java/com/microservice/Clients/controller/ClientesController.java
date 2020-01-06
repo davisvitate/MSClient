@@ -48,6 +48,13 @@ public class ClientesController {
 		return clienteservicios.save(cli);
 	}
 	
+//	@PutMapping("/updatenumcounth")
+//	public Mono<Client> update(String num_monto){
+//		Client c = new Client();
+//		c.setNumcuentaahorro(num_monto);
+//		return clienteservicios;
+//	}
+	
 	//@PutMapping("/update/{id}")
 	//public Mono<Client> updateClient(@PathVariable String Id) {
 	//	 return clienteservicios.findById(Id)
